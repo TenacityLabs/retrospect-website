@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'IvyOra Display';
+    src: url('fonts/IvyOra/IvyOraDisplay-Bold.eot');
+    src: local('fonts/IvyOra/IvyOra Display Bold'), local('fonts/IvyOra/IvyOraDisplay-Bold'),
+        url('fonts/IvyOra/IvyOraDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/IvyOra/IvyOraDisplay-Bold.woff2') format('woff2'),
+        url('fonts/IvyOra/IvyOraDisplay-Bold.woff') format('woff'),
+        url('fonts/IvyOra/IvyOraDisplay-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IvyOra Display';
+    src: url('fonts/IvyOra/IvyOraDisplay-Light.eot');
+    src: local('fonts/IvyOra/IvyOra Display Light'), local('fonts/IvyOra/IvyOraDisplay-Light'),
+        url('fonts/IvyOra/IvyOraDisplay-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/IvyOra/IvyOraDisplay-Light.woff2') format('woff2'),
+        url('fonts/IvyOra/IvyOraDisplay-Light.woff') format('woff'),
+        url('fonts/IvyOra/IvyOraDisplay-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IvyOra Display';
+    src: url('fonts/IvyOra/IvyOraDisplay-BoldItalic.eot');
+    src: local('fonts/IvyOra/IvyOra Display Bold Italic'), local('fonts/IvyOra/IvyOraDisplay-BoldItalic'),
+        url('fonts/IvyOra/IvyOraDisplay-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/IvyOra/IvyOraDisplay-BoldItalic.woff2') format('woff2'),
+        url('fonts/IvyOra/IvyOraDisplay-BoldItalic.woff') format('woff'),
+        url('fonts/IvyOra/IvyOraDisplay-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IvyOra Display';
+    src: url('fonts/IvyOra/IvyOraDisplay-MediumItalic.eot');
+    src: local('fonts/IvyOra/IvyOra Display Medium Italic'), local('fonts/IvyOra/IvyOraDisplay-MediumItalic'),
+        url('fonts/IvyOra/IvyOraDisplay-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/IvyOra/IvyOraDisplay-MediumItalic.woff2') format('woff2'),
+        url('fonts/IvyOra/IvyOraDisplay-MediumItalic.woff') format('woff'),
+        url('fonts/IvyOra/IvyOraDisplay-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IvyOra Display';
+    src: url('fonts/IvyOra/IvyOraDisplay-LightItalic.eot');
+    src: local('fonts/IvyOra/IvyOra Display Light Italic'), local('fonts/IvyOra/IvyOraDisplay-LightItalic'),
+        url('fonts/IvyOra/IvyOraDisplay-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/IvyOra/IvyOraDisplay-LightItalic.woff2') format('woff2'),
+        url('fonts/IvyOra/IvyOraDisplay-LightItalic.woff') format('woff'),
+        url('fonts/IvyOra/IvyOraDisplay-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IvyOra Display';
+    src: url('fonts/IvyOra/IvyOraDisplay-Medium.eot');
+    src: local('fonts/IvyOra/IvyOra Display Medium'), local('fonts/IvyOra/IvyOraDisplay-Medium'),
+        url('fonts/IvyOra/IvyOraDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/IvyOra/IvyOraDisplay-Medium.woff2') format('woff2'),
+        url('fonts/IvyOra/IvyOraDisplay-Medium.woff') format('woff'),
+        url('fonts/IvyOra/IvyOraDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IvyOra Display';
+    src: url('fonts/IvyOra/IvyOraDisplay-Regular.eot');
+    src: local('fonts/IvyOra/IvyOra Display Regular'), local('fonts/IvyOra/IvyOraDisplay-Regular'),
+        url('fonts/IvyOra/IvyOraDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/IvyOra/IvyOraDisplay-Regular.woff2') format('woff2'),
+        url('fonts/IvyOra/IvyOraDisplay-Regular.woff') format('woff'),
+        url('fonts/IvyOra/IvyOraDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IvyOra Display';
+    src: url('fonts/IvyOra/IvyOraDisplay-Thin.eot');
+    src: local('fonts/IvyOra/IvyOra Display Thin'), local('fonts/IvyOra/IvyOraDisplay-Thin'),
+        url('fonts/IvyOra/IvyOraDisplay-Thin.eot?#iefix') format('embedded-opentype'),
+        url('fonts/IvyOra/IvyOraDisplay-Thin.woff2') format('woff2'),
+        url('fonts/IvyOra/IvyOraDisplay-Thin.woff') format('woff'),
+        url('fonts/IvyOra/IvyOraDisplay-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IvyOra Display';
+    src: url('fonts/IvyOra/IvyOraDisplay-RegularItalic.eot');
+    src: local('fonts/IvyOra/IvyOra Display Regular Italic'), local('fonts/IvyOra/IvyOraDisplay-RegularItalic'),
+        url('fonts/IvyOra/IvyOraDisplay-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/IvyOra/IvyOraDisplay-RegularItalic.woff2') format('woff2'),
+        url('fonts/IvyOra/IvyOraDisplay-RegularItalic.woff') format('woff'),
+        url('fonts/IvyOra/IvyOraDisplay-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IvyOra Display';
+    src: url('fonts/IvyOra/IvyOraDisplay-ThinItalic.eot');
+    src: local('fonts/IvyOra/IvyOra Display Thin Italic'), local('fonts/IvyOra/IvyOraDisplay-ThinItalic'),
+        url('fonts/IvyOra/IvyOraDisplay-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/IvyOra/IvyOraDisplay-ThinItalic.woff2') format('woff2'),
+        url('fonts/IvyOra/IvyOraDisplay-ThinItalic.woff') format('woff'),
+        url('fonts/IvyOra/IvyOraDisplay-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
