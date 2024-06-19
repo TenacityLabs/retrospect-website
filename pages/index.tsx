@@ -104,7 +104,7 @@ export default function Home() {
               Live in <i>Retrospect</i>.
             </h1>
             <h2 className="font-syne text-3xl tracking-wider">
-              Digital time capsules to help you <br /> document the moments that matter.
+              Digital time capsules to help you <br className="max-lg:hidden" /> document the moments that matter.
             </h2>
             <div className="flex flex-col gap-4 items-center tracking-wider">
               <div className="text-2xl font-syne">Join the Waitlist</div>
@@ -148,7 +148,7 @@ export default function Home() {
           </div>
         </div>
         <div ref={secondPageObserver}>
-          <div className="h-full flex flex-col items-center justify-start gap-8 text-center child-2 pb-[20vh]">
+          <div className="h-full flex flex-col items-center justify-start gap-8 text-center child-2 pb-[20vh] max-lg:-mt-[20vh]">
             <h3 className="font-light text-5xl tracking-wide max-lg:hidden">
               The <i>Experience</i>
             </h3>
