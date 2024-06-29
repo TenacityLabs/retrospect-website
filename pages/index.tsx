@@ -188,7 +188,7 @@ export default function Home() {
                 />
               </Link>
               <Link
-                href="https://www.slimescholars.com"
+                href="https://www.tiktok.com/@retrospectspace"
                 target="_blank"
                 className="hover:brightness-75 transition-all"
                 aria-label="tiktok button"
