@@ -90,7 +90,7 @@ export default function Home() {
 
 
           context.beginPath();
-          context.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+          context.strokeStyle = i % 5 === 0 ? 'rgba(255, 255, 255, 0.4)' : 'rgba(255, 255, 255, 0.3)';
           context.lineWidth = 2;
           context.moveTo(
             width / 2 + (width + height) * Math.cos(theta),
@@ -104,11 +104,11 @@ export default function Home() {
 
           if (i % 5 === 0) {
             context.beginPath();
-            context.strokeStyle = 'rgba(255, 255, 255, 0.2)'
+            context.strokeStyle = 'rgba(255, 255, 255, 0.4)'
             context.lineWidth = 2;
             context.moveTo(
-              width / 2 + (width + height) * Math.cos(theta),
-              height / 2 + (width + height) * Math.sin(theta)
+              width / 2 + ellipseRadius * amplitude * Math.cos(theta),
+              height / 2 + ellipseRadius * amplitude * Math.sin(theta)
             );
             context.lineTo(
               width / 2 + (ellipseRadius * 0.85) * amplitude * Math.cos(theta),
@@ -124,12 +124,6 @@ export default function Home() {
   return (
     <main className="relative w-screen h-screen">
       <canvas width={width || 0} height={height || 0} ref={canvasRef} className="fixed inset-0 pointer-events-none max-lg:hidden" />
-      <div className={`fixed inset-0 pointer-events-none transition-all duration-500
-            ${scrollPosition < (height || 0) / 3 ? "opacity-75 translate-y-0" : "opacity-0 translate-y-16"}`}>
-        <div className="absolute bottom-0 flex items-center justify-center font-syne mb-4 text-2xl animate-pulse w-full max-lg:hidden">
-          Scroll down
-        </div>
-      </div>
       <h1 className="hidden">Retrospect</h1>
       <div className="h-[240vh] grid"
         style={{
@@ -138,7 +132,7 @@ export default function Home() {
         <div ref={firstPageObserver}>
           <div className="h-full flex flex-col items-center justify-center gap-8 text-center child-1 pb-[20vh] px-6">
             <Image
-              src="/assets/logo.png"
+              src="/assets/logo.svg"
               alt="retrospect-logo"
               width={75}
               height={75}
@@ -147,15 +141,15 @@ export default function Home() {
             <h1 className="font-light text-5xl tracking-wide">
               Live in <i>Retrospect</i>.
             </h1>
-            <h2 className="font-syne text-3xl tracking-wider">
+            <h2 className="font-syne text-3xl tracking-wider font-semibold">
               Digital time capsules to help you <br className="max-lg:hidden" /> document the moments that matter.
             </h2>
             <div className="flex flex-col gap-4 items-center tracking-wider">
-              <div className="text-2xl font-syne">Join the Waitlist</div>
+              <div className="text-2xl font-syne font-semibold">Join the Waitlist</div>
               <div className="relative w-96">
                 <input className="relative bg-white/[0.7] focus:bg-white/[0.9] rounded-2xl w-full ring-none outline-none 
-              text-center p-2 text-xl text-black font-public tracking-tight transition-all duration-300 z-10"
-                  placeholder="name@retrospect.space"
+              text-center p-2 text-xl text-black font-public tracking-tight transition-all duration-300 z-10 placeholder:text-neutral-500"
+                  placeholder="name@gmail.com"
                   value={email}
                   onChange={(e) => { setEmail(e.target.value) }}
                   aria-label="waitlist input"
