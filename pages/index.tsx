@@ -3,16 +3,60 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import useScrollObserver from "@/hooks/useScrollObserver";
+import axios, { AxiosError, AxiosResponse } from "axios";
+import { toast } from "react-toastify";
+
+function safeAxiosApply<
+  T extends (...args: any[]) => Promise<AxiosResponse<any, any>>
+>(fn: T) {
+  return async function (...args: Parameters<T>): Promise<ReturnType<T>> {
+    const res = await fn(...args)
+      .then((res) => res)
+      .catch((err) => {
+        if (err instanceof AxiosError) return err;
+        else throw err;
+      });
+    return res as ReturnType<T>;
+  };
+}
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [complete, setComplete] = useState<boolean>(false);
   const { width, height } = useWindowSize();
 
   const [email, setEmail] = useState<string>()
 
   const { targetRef: firstPageObserver } = useScrollObserver('pop-out-element', '.child-1')
   const { targetRef: secondPageObserver } = useScrollObserver('pop-out-element', '.child-2')
+
+  const addEmail = async () => {
+    setLoading(true)
+    try {
+      const response = await safeAxiosApply(async () => await axios.post("/api/add-email", { email }))()
+      if (response instanceof AxiosError) {
+        console.log(response)
+        if (response.response?.data.message) {
+          toast(response.response?.data.message)
+        }
+        else {
+          toast("There was an error with adding your email. Please try again in a few minutes.")
+        }
+      }
+      else {
+        toast("Email added successfully!")
+        setComplete(true)
+      }
+    }
+    catch (error: any) {
+      toast(error.message)
+    }
+    finally {
+      setLoading(false)
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -108,16 +152,28 @@ export default function Home() {
             </h2>
             <div className="flex flex-col gap-4 items-center tracking-wider">
               <div className="text-2xl font-syne">Join the Waitlist</div>
-              <input className="bg-white/[0.7] focus:bg-white/[0.8] focus:scale-[1.02] rounded-full w-96 ring-none outline-none caret-transparent
-              text-center p-2 text-xl text-black font-public tracking-tight transition-all duration-300"
-                placeholder="name@gmail.com"
-                value={email}
-                onChange={(e) => { setEmail(e.target.value) }}
-                aria-label="waitlist input"
-              >
-              </input>
+              <div className="relative w-96">
+                <input className="relative bg-white/[0.7] focus:bg-white/[0.9] rounded-2xl w-full ring-none outline-none 
+              text-center p-2 text-xl text-black font-public tracking-tight transition-all duration-300 z-10"
+                  placeholder="name@retrospect.space"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value) }}
+                  aria-label="waitlist input"
+                />
+                <button className={`absolute top-0 pt-12 flex w-full items-center justify-center font-syne bg-white/[0.3] hover:bg-white/[0.5] 
+                transition-all duration-150 rounded-2xl pb-1 z-0 origin-top ${email ? "scale-y-100 h-auto" : "scale-y-0 h-0"}`}
+                  disabled={complete || loading}
+                  onClick={addEmail}
+                  style={{
+                    paddingTop: email ? "3rem" : 0
+                  }}>
+                  <span className="transition-opacity duration-150">
+                    {complete ? "You're all set!" : loading ? "Loading..." : "Sign Me Up!"}
+                  </span>
+                </button>
+              </div>
             </div>
-            <div className="flex flex-row items-center gap-2">
+            <div className="flex flex-row items-center gap-2 mt-4">
               <Link
                 href="https://www.instagram.com/retrospect.space/"
                 target="_blank"
@@ -157,7 +213,8 @@ export default function Home() {
               max-lg:w-[70vw] max-md:w-[90vw] max-lg:text-center max-lg:text-4xl"
                 style={{
                   lineHeight: 1.5
-                }}>
+                }}
+              >
                 We&apos;re creating <i>digital time capsules,</i> helping you build multimedia archives to document the <i>moments that matter.</i>
               </h4>
               <div className="max-lg:flex max-lg:flex-col max-lg:items-center lg:justify-center w-fit max-lg:w-full">
