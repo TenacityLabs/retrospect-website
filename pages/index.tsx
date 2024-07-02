@@ -144,17 +144,18 @@ export default function Home() {
             <h2 className="font-syne text-3xl tracking-wider font-semibold">
               Digital time capsules to help you <br className="max-lg:hidden" /> document the moments that matter.
             </h2>
-            <div className="flex flex-col gap-4 items-center tracking-wider">
+            <div className={`flex flex-col gap-4 items-center tracking-wider`}>
               <div className="text-2xl font-syne font-semibold">Join the Waitlist</div>
-              <div className="relative w-96">
-                <input className="relative bg-white/[0.7] focus:bg-white/[0.9] rounded-2xl w-full ring-none outline-none 
-              text-center p-2 text-xl text-black font-public tracking-tight transition-all duration-300 z-10 placeholder:text-neutral-500"
+              <div className={`relative w-96`}>
+                <input className={`relative bg-white/[0.7] ${!complete && "focus:bg-white/[0.9]"} ${complete && "caret-transparent"} ${complete && "cursor-not-allowed"}
+                rounded-2xl w-full ring-none outline-none text-center p-2 text-xl text-black font-public tracking-tight transition-all duration-300 z-10 placeholder:text-neutral-500`}
+                  disabled={complete}
                   placeholder="name@gmail.com"
                   value={email}
                   onChange={(e) => { setEmail(e.target.value) }}
                   aria-label="waitlist input"
                 />
-                <button className={`absolute top-0 pt-12 flex w-full items-center justify-center font-syne bg-white/[0.3] hover:bg-white/[0.5] 
+                <button className={`absolute top-0 pt-12 flex w-full items-center justify-center font-syne bg-white/[0.3] ${!complete && "hover:bg-white/[0.5]"} ${complete && "cursor-not-allowed"} 
                 transition-all duration-150 rounded-2xl pb-1 z-0 origin-top ${email ? "scale-y-100 h-auto" : "scale-y-0 h-0"}`}
                   disabled={complete || loading}
                   onClick={addEmail}
