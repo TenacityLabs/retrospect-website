@@ -122,7 +122,7 @@ export default function Home() {
   }, [scrollPosition, width, height]);
 
   return (
-    <main className="relative w-screen h-screen overflow-x-hidden">
+    <main className="relative w-screen h-screen">
       <canvas width={width || 0} height={height || 0} ref={canvasRef} className="fixed inset-0 pointer-events-none max-lg:hidden" />
       <h1 className="hidden">Retrospect</h1>
       <div className="h-[240vh] grid"
@@ -146,7 +146,7 @@ export default function Home() {
             </h2>
             <div className={`flex flex-col gap-4 items-center tracking-wider`}>
               <div className="text-2xl font-syne font-semibold">Join the Waitlist</div>
-              <div className={`relative w-96`}>
+              <div className={`relative w-96 max-w-screen`}>
                 <input className={`relative bg-white/[0.7] ${!complete && "focus:bg-white/[0.9]"} ${complete && "caret-transparent"} ${complete && "cursor-not-allowed"}
                 rounded-2xl w-full ring-none outline-none text-center p-2 text-xl text-black font-public tracking-tight transition-all duration-300 z-10 placeholder:text-neutral-500`}
                   disabled={complete}
@@ -199,7 +199,7 @@ export default function Home() {
           </div>
         </div>
         <div ref={secondPageObserver}>
-          <div className="h-full flex flex-col items-center justify-start gap-8 text-center child-2 pb-[20vh] max-lg:-mt-[20vh]">
+          <div className="h-full flex flex-col items-center justify-start gap-8 text-center child-2 pb-[20vh] max-lg:pb-[175vh] max-lg:-mt-[20vh]">
             <h3 className="font-light text-5xl tracking-wide max-lg:hidden">
               The <i>Experience</i>
             </h3>
