@@ -122,7 +122,7 @@ export default function Home() {
   }, [scrollPosition, width, height]);
 
   return (
-    <main className="relative w-screen h-screen overflow-x-clip">
+    <main className="relative w-full h-screen overflow-x-clip">
       <canvas width={width || 0} height={height || 0} ref={canvasRef} className="fixed inset-0 pointer-events-none max-lg:hidden" />
       <h1 className="hidden">Retrospect</h1>
       <div className="h-[240vh] grid"
